@@ -15,7 +15,7 @@ let{SOMME, PRODUIT}=require("./mathLib.cjs")
 // console.log(produit(10, 5))
 
 
-const nbr1=215;
+const nbr1=25;
 const nbr2=2215;
 console.log(`${nbr1}+ ${nbr2}=${SOMME(nbr1,nbr2)}`);
 console.log(`${nbr1}* ${nbr2}=${PRODUIT(nbr1,nbr2)}`);
