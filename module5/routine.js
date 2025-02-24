@@ -30,5 +30,11 @@ const server = http.createServer((req, res) => {
         res.end(content);
       }
     });
+  }else{
+    res.writeHead(404, { "Content-Type": "text/; charset=utf-8" });
+    res.end("<h1 style='color:red'>404</h1><p>Page not found</p>");
   }
 });
+server.listen(3000, ()=>{
+    console.log("Server is running on port 3000");  // Log the server is running on port 3000.  This will help you identify the server when it starts up.  The port number is chosen to be 3000 for simplicity, but you can choose any port number that you prefer.  Just make sure to replace 3000 in the server.listen function with your chosen port number.  The server will start listening for incoming connections and respond to them as specified in the routes.  The server.listen function returns a server object that can be used to close the server later.  This is why we store the server object in a variable and call the server.close function when we're done with the server.  This ensures that the server stops listening for incoming connections when we're done with it.  The server.close function takes a callback function as an argument, which is called when the server has stopped
+})
