@@ -1,3 +1,6 @@
+//ici, nous devons parcourir l'url du navigateurs
+
+
 // const http=require('http');
 import http from 'http'; //
 const server=http.createServer((req, res)=>{
