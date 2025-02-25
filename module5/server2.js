@@ -1,11 +1,11 @@
 const http = require("http");
-// Définir le port sur lequel le serveur écoutera
+
 const PORT = 3000;
-// Créer le serveur
+
 const server = http.createServer((req, res) => {
-  // Gérer les erreurs
+
   try {
-    // Vérifier l'URL de la requête
+   
     switch (req.url) {
       case "/":
         res.writeHead(200, { "Content-Type": "text/plain ; charset=utf-8 " });
@@ -26,7 +26,7 @@ const server = http.createServer((req, res) => {
     res.end("Une erreur est survenue sur le serveur.");
   }
 });
-// Écouter sur le port défini
+
 server.listen(PORT, () => {
   console.log(`Serveur en cours sur http://localhost:${PORT}`);
 });
