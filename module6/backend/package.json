@@ -1,5 +1,6 @@
 {
   "name": "backend",
+  "type":"module",
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
@@ -13,7 +14,6 @@
   "dependencies": {
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
-    "type":"module",
     "nodemon": "^3.1.9"
   }
 }
