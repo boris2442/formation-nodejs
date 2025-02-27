@@ -2,10 +2,10 @@ const http = require("http");
 const fs = require("fs");
 const path = require("path");
 
-const sever = http.createServer((req, res) => {
+const server = http.createServer((req, res) => {
   console.log(`${req.method} ${req.url}`);
 });
-let filePath = req.url === "/" ? "/index.html" : req.url;
+let filePath = req.url === '/' ? '/index.html' : req.url;
 filePath = path.join(__dirname, "public", "files", filePath);
 
 const extname = path.extname(filePath);
@@ -22,7 +22,7 @@ switch (extname) {
     break;
   default:
     contentType = "text/html";
-    break;
+   
 }
 
 fs.readFile(filePath, (err, content) => {
@@ -42,7 +42,7 @@ fs.readFile(filePath, (err, content) => {
   }
 });
 
-server.listen(3000, () => {
+server.listen(3001, () => {
   console.log("Serveur démarré sur le port 3000");
 });
 
