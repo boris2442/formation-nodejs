@@ -2,11 +2,13 @@ const http = require("http");
 const fs = require("fs");
 const path = require("path");
 
+
+
 const server = http.createServer((req, res) => {
   console.log(`${req.method} ${req.url}`);
-});
-let filePath = req.url === '/' ? '/index.html' : req.url;
-filePath = path.join(__dirname, "public", "files", filePath);
+
+let filePath = req.url === "/" ? "/index.html" : req.url;
+filePath = path.join(__dirname, "public", filePath);
 
 const extname = path.extname(filePath);
 let contentType = "text/html";
@@ -22,15 +24,14 @@ switch (extname) {
     break;
   default:
     contentType = "text/html";
-   
 }
 
 fs.readFile(filePath, (err, content) => {
   if (err) {
     if (err.code === "ENOENT") {
       // Fichier non trouvé
-      res.writeHead(404, { "Content-Type": "text/html" });
-      res.end("<h1>404</h1><p>Fichier non trouvé</p>");
+      res.writeHead(404, { "Content-Type": "text/html; utf-8;" });
+      res.end("<h1>404</h1><p>Fichier non trouvé ok</p>");
     } else {
       // Autre erreur du serveur
       res.writeHead(500, { "Content-Type": "text/html" });
@@ -41,8 +42,11 @@ fs.readFile(filePath, (err, content) => {
     res.end(content, "utf-8");
   }
 });
-
-server.listen(3001, () => {
-  console.log("Serveur démarré sur le port 3000");
 });
 
+
+
+
+server.listen(5005, () => {
+  console.log("Serveur démarré sur le port 5005");
+});
