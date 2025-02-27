@@ -6,14 +6,64 @@
     text-decoration: none;
     font-family: Verdana, Geneva, sans-serif;
 }
+body{
+  
+
+}
 header{
     display: flex;
     justify-content: space-around;
     align-items: center;
+    position: sticky;
+    height: 12vh;
+    top: 0;
+    background: blue;
+    color:#fff;
+    z-index: 10;
+    box-shadow: 2px 3px 5px f1f1f1;
 }
 header nav ul{
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 20px;
+}
+header ul li a{
+    color:#fff;
+}
+section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+padding: 40px;
+    
+}
+.container{
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap-reverse;
+   gap: 30px;
+}
+ .container div:nth-child(1){
+   padding-top:40px;
+} 
+.container p{
+    text-align: justify;
+}
+.container img{
+    height: 400px;
+    max-width: 400  ;
+    box-shadow: 2px 3px 5px #333;
+    border-radius: 100px 7px 100px 0px;
+  
+}
+
+button{
+    margin-top: 20px;
+    background-color: blue;
+    border:none;
+    padding: 7px 10px;
+    color: #f1f1ff;
+    border-radius: 7px;
+
 }
