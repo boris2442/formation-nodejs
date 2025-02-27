@@ -7,6 +7,12 @@ const path = require("path");
 const server = http.createServer((req, res) => {
   console.log(`${req.method} ${req.url}`);
 
+if(req.url='/accueil'){
+  res.writeHead(200, {"Content-Type": "text/plain; charset=utf-8"});
+  res.end("Page d'accueil du site");
+}
+
+
 let filePath = req.url === "/" ? "/index.html" : req.url;
 filePath = path.join(__dirname, "public", filePath);
 
@@ -30,7 +36,7 @@ fs.readFile(filePath, (err, content) => {
   if (err) {
     if (err.code === "ENOENT") {
       // Fichier non trouvé
-      res.writeHead(404, { "Content-Type": "text/html; utf-8;" });
+      res.writeHead(404, { "Content-Type": "text/html; utf-8" });
       res.end("<h1>404</h1><p>Fichier non trouvé ok</p>");
     } else {
       // Autre erreur du serveur
