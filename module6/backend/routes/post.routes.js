@@ -14,7 +14,7 @@ router.get('/post', (req, res)=>{
         title:'Mon premier post',
         content:'contenu du post'
     })
-})
+})                                                                                                                                                  
 
 
 //dans le cas ou c'est common js module.exports=router
