@@ -1,27 +1,31 @@
 // const express=require('express');
 import express from "express";
 const router = express.Router();
+// const { setPosts } = imports model from ("../controllers/post.controller");
+import {setPosts, setGet} from ("../controllers/post.controller");
 //permet de creer les differentes routes!
 
-router.get("/", (req, res) => {
-  res.json({
-    message: "home page",
-  });
-});
-router.get("/post", (req, res) => {
-  res.json({
-    id: 1,
-    title: "Mon premier post",
-    content: "contenu du post de la date du 05 mars 2025",
-  });
-});
-router.post("/", (req, res) => {
-  res.json({
-    message: req.body.message,
-    auteur:req.body.auteur
-  });
-});
+// router.get("/", (req, res) => {
+//   res.json({
+//     message: "home page",
+//   });
+// });
 
+router.get('/post', setGet)
+// router.get("/post", (req, res) => {
+//   res.json({
+//     id: 1,
+//     title: "Mon premier post",
+//     content: "contenu du post de la date du 05 mars 2025",
+//   });
+// });
+// router.post("/", (req, res) => {
+//   res.json({
+//     message: req.body.message,
+//     auteur:req.body.auteur
+//   });
+// });
+router.post("/", setPosts)
 
 router.put("/:id", (req, res)=>{
 res.json({
