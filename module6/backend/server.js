@@ -1,4 +1,4 @@
-import express from 'express';
+import express, { urlencoded } from 'express';
 //create a router variable 
 import postRoute from './routes/post.routes.js';
 //avec comonjs, const post=require('./routes/post.routes.js)
@@ -6,11 +6,12 @@ const port=3001;
 const app= express();
 
 
-//
-app.use(express.json())
+app.use(express.urlencoded({extended:false}))
+
+app.use(express.json());
 app.use('/', postRoute )
 app.use('/post', postRoute )
-
+app.use('/post/like-post/:id', postRoute)
 
 
 
