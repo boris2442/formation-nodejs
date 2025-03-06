@@ -1,6 +1,10 @@
-import express, { urlencoded } from 'express';
+// import express, { urlencoded } from 'express';
+import express from 'express';
 //create a router variable 
+import connectDB from './config/database.js';
 import postRoute from './routes/post.routes.js';
+import dotenv from 'dotenv';
+dotenv.config();
 //avec comonjs, const post=require('./routes/post.routes.js)
 const port=3001;
 const app= express();
@@ -33,3 +37,6 @@ app.use('/post/like-post/:id', postRoute)
 app.listen(port, ()=>{
     console.log(`serveur creer sur le port ${port} avec succes`);
 })
+
+
+connectDB();
